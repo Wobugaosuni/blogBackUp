@@ -13,6 +13,8 @@ tags:
 ## chunkhash
 会比较某个文件的改动历史，如果没改动，chunkhash不变。如果改动了，chunkhush会变化。这既保证了有用的缓存，对于改动的文件也立马反应到页面上
 
+<!-- more -->
+
 使用：
 `chunkFilename: '[name].[chunkhash:8].js',`
 

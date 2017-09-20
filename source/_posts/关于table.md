@@ -14,6 +14,7 @@ table {
 例子：
 run in jsbin: https://jsbin.com/cewajokayu/edit?html,css,output
 
+<!-- more -->
 
 ## 单元格固定的高（单元格固定的高）
 #### 使用场景
