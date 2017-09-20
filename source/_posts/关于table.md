@@ -19,7 +19,8 @@ run in jsbin: https://jsbin.com/cewajokayu/edit?html,css,output
 #### 使用场景
 进行页面缩放时，尤其比例较大时，虽然已经对单元格的高设置了高度，但看元素时，仍然可以看出，单元格的高增加了。如图所示
 
-<img src="quiver-image-url/7B481CD7AF54D5973DD7321EA3DB297B.jpg" width=500 />
+<img src="./table.jpeg" width="650" />
+
 
 但旁边的参照物，div元素的高是没有增加的
 
