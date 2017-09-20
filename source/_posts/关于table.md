@@ -17,10 +17,10 @@ run in jsbin: https://jsbin.com/cewajokayu/edit?html,css,output
 
 ## 单元格固定的高（单元格固定的高）
 #### 使用场景
-进行页面缩放时，尤其比例较大时，虽然已经对单元格的高设置了高度，但看元素时，仍然可以看出，单元格的高增加了。如图所示
-
-<img src="./table.jpeg" width="650" />
-
+进行页面缩放时，尤其比例较大时，虽然已经对单元格的高设置了高度，但看元素时，仍然可以看出，单元格的高增加了。如图所示:
+<div style="width: 650px">
+  {% asset_img table.jpeg %}
+</div>
 
 但旁边的参照物，div元素的高是没有增加的
 
