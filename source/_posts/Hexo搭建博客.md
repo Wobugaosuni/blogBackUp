@@ -9,13 +9,7 @@ tags:
 - 中文文档：https://hexo.io/zh-cn/docs/
 - 是一个快速、简洁且高效的博客框架。使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页
 
-极速搭建，参考：
-- http://www.jianshu.com/p/4eaddcbe4d12
-- http://www.jianshu.com/p/834d7cc0668d
-
-
-nextT主题教程：
-- http://theme-next.iissnan.com/getting-started.html
+nextT主题教程：http://theme-next.iissnan.com/getting-started.html
 
 <!-- more -->
 
@@ -24,7 +18,7 @@ nextT主题教程：
 目的：发布到个人的github网站(username.github.io)
 1. 使用github pages
 github pages优点：免费托管，自带主题，支持自制页面等
-创建github pages，仓库名为username.github.io，username一定与Owner一致
+创建github pages，仓库名为`username.github.io`，username一定与Owner一致
 
 2. 安装hexo
 `sudo npm i hexo-cli -g`
@@ -101,11 +95,11 @@ hexo new [layout] <title>
     </div>
   3. 添加域名
   4. 修改域名的dns地址为`f1g1ns1.dnspod.net`和`f1g1ns2.dnspod.net`
-    1. 拷贝DNSpod的记录值
+    - 拷贝DNSpod的记录值
       <div style="width: 600px">
         {% asset_img WechatIMG214.jpeg %}
       </div>
-    2. 粘贴到万网上
+    - 粘贴到万网上
       <div style="width: 600px">
         {% asset_img WechatIMG215.jpeg %}
       </div>
@@ -120,19 +114,18 @@ hexo new [layout] <title>
       {% asset_img WechatIMG220.jpeg %}
     </div>
   2. 添加A记录
-    1. 在github pages仓库上增加域名
+    <b>在github pages仓库上增加域名</b>
       <div style="width: 600px">
         {% asset_img WechatIMG223.jpeg %}
       </div>
-    2. 添加两条A记录
+    <b>添加两条A记录</b>
       <div style="width: 600px">
         {% asset_img WechatIMG222.jpeg %}
       </div>
-    3. 在终端ping域名，是否成功
+    <b>在终端ping域名，是否成功</b>
       <div style="width: 450px">
         {% asset_img WechatIMG224.jpeg %}
       </div>
-
   3. 在本地站点目录里的`source`目录下添加`CHAME`文件，打开后添加域名信息`annhuang.cn`，填好之后，重新部署到github pages（hexo -g d）
 
 <br />
@@ -146,3 +139,9 @@ hexo new [layout] <title>
 <div style="width: 450px">
   {% asset_img WechatIMG225.jpeg %}
 </div>
+
+<br />
+## 文档参考
+极速搭建，参考：
+  - http://www.jianshu.com/p/4eaddcbe4d12
+  - http://www.jianshu.com/p/834d7cc0668d

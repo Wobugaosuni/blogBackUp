@@ -26,6 +26,3 @@ tags: JS
     return Math.ceil(metrics.width)  // 向上取整
   }
   ```
-
-
-## 工具函数 ——
