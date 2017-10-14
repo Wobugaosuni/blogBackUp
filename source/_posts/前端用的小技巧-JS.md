@@ -66,3 +66,14 @@ tags:
     return indexList
   }
   ```
+
+<br />
+<br />
+## 随机生成id
+使用场景
+mock数据时，经常出现产品id，要求有唯一性的。有两种方法：
+  1. 手动输入id，如`productId: 101`等等。但存在大量数据时，就会有一个问题，维护非常麻烦！
+  2. √ 利用`Math.random`随机生成，转成字符串(`num.toString()`)后，使用`string.slice(num)`进行裁剪:
+    ```js
+    Math.random().toString().slice(2)
+    ```
