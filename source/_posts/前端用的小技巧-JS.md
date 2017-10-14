@@ -1,9 +1,15 @@
 ---
 title: 前端用的小技巧(JS)
 date: 2017-09-18 20:06:38
-tags: JS
+tags:
+  - JS
+  - Util
+  - 持续更新
 ---
 
+在业务开发中，会遇到很多交互相关的小细节，涉及到js的，都可以写在util里，作为一个小工具使用
+
+<br />
 ## 计算字符串的物理长度(px)
 - 使用场景
 当不确定字符长度，又需要给它一个相对的宽度时，应该怎么做呢？
@@ -16,13 +22,47 @@ tags: JS
 - 实现的函数
   ```js
   /**
-  * 计算字符的长度
-  * @param {*} text
-  */
+   * 计算字符的长度
+   * @param {*} text
+   */
   export function getTextWidth(text) {  // 参数为单个字符串
     const canvas = document.createElement('canvas') // 新增 canvas 元素
     const context = canvas.getContext('2d') // 返回 canvas 的上下文绘图环境
     const metrics = context.measureText(text)  // 测量字符串的宽
     return Math.ceil(metrics.width)  // 向上取整
+  }
+  ```
+
+<br />
+<br />
+## 获取数组里重复的值的index
+- 使用场景
+做递归循环的输入或者选择组件时，一般不允许用户输入或选择重复的值。对于交互，可以把重复的值凸显出来。这时候关键的点是，如何获得重复的值呢？
+  1. 把递归的值放到数组里
+  2. 获取重复的index，放到一个新数组里
+
+<br />
+- 实现的函数
+  ```js
+  /**
+   * 获取数组里重复的值的index
+   * return array
+   */
+  export function getDuplicatesIndexList(array) {
+    const duplicates = {} // 把数组元素作为对象的属性，如果已经有了该属性，说明这是数组里重复的元素
+    const indexList = []
+
+    for (let i = 0; i < array.length; i += 1) {
+      if (duplicates.hasOwnProperty(array[i])) {
+        // 重复的(不包括第一个)
+        indexList.push(i)
+      } else if (array.lastIndexOf(array[i]) !== i) {
+        duplicates[array[i]] = ''
+        // 是否加入第一个重复的值
+        // indexList.push(i)
+      }
+    }
+
+    return indexList
   }
   ```
