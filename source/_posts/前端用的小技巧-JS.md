@@ -77,3 +77,13 @@ mock数据时，经常出现产品id，要求有唯一性的。有两种方法�
     ```js
     Math.random().toString().slice(2)
     ```
+
+<br />
+<br />
+## 类型转换函数，将字符串转为数字
+```js
+function type (d) {
+	d = +d; // "+": 将字符串转为数字，并覆盖原来的值
+	return d;
+}
+```
