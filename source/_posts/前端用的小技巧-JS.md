@@ -87,3 +87,35 @@ function type (d) {
 	return d;
 }
 ```
+
+<br />
+<br />
+## JSON深拷贝
+  ```js
+  function deepClone(json) {
+    return JSON.parse(JSON.stringify(json))
+  }
+
+  var a = {
+    a: 1,
+    b: { c: 1, d: 2 }
+  }
+  console.log('deepClone a is:', deepClone(a))
+  ```
+
+<br />
+<br />
+## 获取数组的最大值和最小值
+  ```js
+  function maxInList(list) {
+    return Math.max.apply(Math, list)
+  }
+
+  function minInList(list) {
+    return Math.min.apply(Math, list)
+  }
+
+  var list = [5, 458 , 120 , -215 , 228 , 400 , 122205, -85411]
+  console.log('max number is:', maxInList(list))
+  console.log('min number is:', minInList(list))
+  ```
