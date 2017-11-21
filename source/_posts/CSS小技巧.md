@@ -3,6 +3,7 @@ title: CSS小技巧
 date: 2017-11-17 18:02:50
 tags:
   - CSS
+  - 持续更新
 ---
 
 ## 关于单行文本超出宽度省略
@@ -41,3 +42,45 @@ text-overflow: ellipsis; /* 用省略号代表被修剪得文本 */
   overflow: hidden;
 }
 ```
+
+<br />
+## 鼠标悬浮提示文字
+
+需求：鼠标经过时有文字注释
+效果如图：
+<div style="width: 250px">
+  {% asset_img hover.gif %}
+</div>
+
+有两种实现方式
+具体效果可查看：https://jsbin.com/diniceloze/edit?html,css,output
+- 方法1，使用元素的title属性
+优点：简单易用，只需给元素增加一个title属性即可
+缺点：样式固定，无法个性化
+例子：
+  ```html
+  <div title="hello world">hello world</div>
+  ```
+
+<br />
+- 方法2，利用css的`content:attr()`属性抓取资料
+优点：可定制化hover时的样式
+例子：
+  ```styl
+  /*
+    <div data-msg="hello son" class="method-two">hello son</div>
+  */
+
+  .method-two
+    position relative
+
+  .method-two:hover:after
+    content attr(data-msg)
+    position absolute
+    top 20px
+    left 0
+    font-size 12px
+    color grey
+    border 1px solid grey
+    padding 2px 4px
+  ```
