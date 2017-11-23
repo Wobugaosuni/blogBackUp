@@ -119,3 +119,52 @@ mock数据时，经常出现产品id，要求有唯一性的。有两种方法�
   console.log('max number is:', maxInList(list))  // max number is: 122205
   console.log('min number is:', minInList(list))  // min number is: -85411
   ```
+
+<br />
+<br />
+## 数字格式化，1234567890 -> 1,234,567,890
+
+- 方法1
+  思路：
+  1. 将字符串拆分成单个元素的数组，把元素颠倒过来，每三位加一个逗号，然后再合并数组的元素
+  2. 如果合并后的字符串最后一位是逗号，就需要把逗号去掉
+  3. 这时候字符串是颠倒的，需要再次执行拆分字符串、颠倒、合并的操作
+  ```js
+  function numberFormat(number) {
+    return number.toString()
+      .split('')
+      .reverse()
+      .map((item, index) => {
+        if ((index + 1) % 3) {
+          return item
+        } else {
+          return item + ','
+        }
+      })
+      .join('')
+      .replace(/,$/gi, '')
+      .split('')
+      .reverse()
+      .join('')
+  }
+
+  numberFormat(123456789)  // 123,456,789
+  ```
+
+- 方法2
+  ```js
+  function numberFormat(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+  }
+
+  numberFormat(123456789)  // 123,456,789
+  ```
+
+- 方法3
+  ```js
+  function numberFormat(number) {
+    return number.toLocaleString('en-US')
+  }
+
+  numberFormat(123456789)  // 123,456,789
+  ```
