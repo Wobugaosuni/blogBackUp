@@ -56,43 +56,46 @@ tags:
 </div>
 
 ```js
-function add(string1, string2) {
-  // 实现该函数
-  /**
-   * 方法一，不能实现大数相加
-   */
-  // return (Number(string1) + Number(string2)).toString()
+  function add(string1, string2) {
+    function add(string1, string2) {
+    // 实现该函数
+    // 先判断，如果小于16位，直接相加
+    if (string1.length < 16 && string2.length <16) {
+      return ((+string1) + (+string2)).toString()
+    }
 
-  /**
-   * 方法二，只能适合非负数相加
-   */
-  // 大数相加
-  let list1 = string1.split('').reverse()   // 将字符串拆分成单个元素的数组，把元素颠倒过来
-  let list2 = string2.split('').reverse()
-  let resultList = []  // 存放相加好的个位数的list
-  let carry = 0  // 进位
-  const cycleNumbers = Math.max.apply(Math, [string1.length, string2.length])  // 相加的次数
+    /**
+    * 方法一，不能实现大数相加
+    */
+    // return (Number(string1) + Number(string2)).toString()
+    // 大数相加
+    let list1 = string1.split('').reverse()   // 将字符串拆分成单个元素的数组，把元素颠倒过来
+    let list2 = string2.split('').reverse()
+    let resultList = []  // 存放相加好的个位数的list
+    let carry = 0  // 进位
+    const cycleNumbers = Math.max.apply(Math, [string1.length, string2.length])  // 相加的次数
 
-  let i = 0
-  while (i <= cycleNumbers) {
-    unitTotalList = (Number(list1.shift() || '0')  + Number(list2.shift() || '0') + carry).toString().split('')  // 个位数相加
-    resultList.push(unitTotalList.pop());  // 把结果放进list里
+    let i = 0
+    while (i <= cycleNumbers) {
+      unitTotalList = (Number(list1.shift() || '0')  + Number(list2.shift() || '0') + carry).toString().split('')  // 个位数相加
+      resultList.push(unitTotalList.pop());  // 把结果放进list里
 
-    carry = Number(unitTotalList.pop() || '0')  // 进位的数字。默认0
-    // console.log('carry:', carry)
+      carry = Number(unitTotalList.pop() || '0')  // 进位的数字。默认0
+      // console.log('carry:', carry)
 
-    i++
+      i++
+    }
+    // console.log("resultList:", resultList);
+
+    return resultList.reverse().join('').replace(/^0/gi, '')  // 把list颠倒过来，合并。如果最大的个位数是0，丢弃
+
+    /**
+    * other
+    */
   }
-  // console.log("resultList:", resultList);
 
-  return resultList.reverse().join('').replace(/^0/gi, '')  // 把list颠倒过来，合并。如果最大的个位数是0，丢弃
+  module.exports = add
 
-  /**
-   * other
-   */
-}
-
-module.exports = add
 ```
 
 <br />
