@@ -8,11 +8,16 @@ tags:
 <br />
 # about this
 
+前端开发避免不了this
+
 - this是JS语言中的关键字
 
 - 总的原则是：**this永远指向的是调用这个函数的域**
 
-本篇以例子为主，阐述this的指向、如何改变this的指向
+本篇以例子为主，阐述this的指向、如何改变this的指向、运用到实际开发中。基本目录如下：
+<div style="width: 300px">
+  {% asset_img p1.png %}
+</div>
 
 <!--more-->
 
@@ -292,7 +297,7 @@ call和apply的区别：
 <br />
 # 应用
 
-## setTimeout/setInterval、匿名函数、箭头函数、异步
+## 定时器、匿名函数、箭头函数、异步
 
 - **在浏览器中，setTimeout/setInterval执行时的当前对象是Window**
   在现实开发数据模拟中，经常使用setTimeout/setInterval模拟异步，所以可以得出，**异步执行时的当前对象也是Window** <span style="display: inline-block; color: #6BD9EE; margin: 0 0 0 10px">▼</span>
