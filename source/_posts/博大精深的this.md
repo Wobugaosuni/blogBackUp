@@ -172,6 +172,47 @@ tags:
 ```
 运行结果为bb，证明全局变量b的值根本没变
 
+- **类的方法内部含有this，this默认指向类的实例。但如果把类的方法提取出来使用，this指向该方法运行时的环境** <span style="display: inline-block; color: #6BD9EE; margin: 0 0 0 10px">▼</span>
+  ```js
+  class Point {
+    toString() {
+      this.toNumber()
+    }
+
+    toNumber(){
+      console.log('xxx')
+    }
+  }
+
+  var point = new Point()
+
+  const {toString} = point
+
+  point.toString();  // 'xxx'
+
+  toString();  // TypeError: this.toNumber is not a function
+  ```
+
+  那如何改变this的指向呢？运用到了下面的方法
+    - 方法一，在构造方法中绑定this  <span style="display: inline-block; color: #6BD9EE; margin: 0 0 0 10px">▼</span>
+      ```js
+      class Point {
+        constructor() {
+          this.toString = this.toString.bind(this)
+        }
+        // ...
+      }
+      ```
+    - 方法二，使用箭头哦函数  <span style="display: inline-block; color: #6BD9EE; margin: 0 0 0 10px">▼</span>
+      ```js
+      class Point {
+        toString = () => {
+          this.toNumber()
+        }
+        // ....
+      }
+      ```
+
 <br />
 ## 六、注意点
 
