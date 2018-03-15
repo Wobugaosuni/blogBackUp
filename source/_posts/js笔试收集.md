@@ -29,7 +29,7 @@ tags:
 
 - 虽然`setTimeout`设置了立马执行，但在不同浏览器中，它是有延时的。chrome延时4ms，旧的ie延时1/60s。是一个异步执行的函数，在以上代码中最后执行
 
-- `Promise.then()`也是一个异步的函数，但跟`setTimeout`相比，`Promise.then()`是一个'micro task`，`setTimeout`是一个'normal task'，`Promise.then()`远比`setTimeout`执行的快
+- `Promise.then()`也是一个异步的函数，但跟`setTimeout`相比，`Promise.then()`是一个`micro task`，`setTimeout`是一个`normal task`，`Promise.then()`远比`setTimeout`执行的快
 
 - `Promise.resolve()`是同步的，按顺序执行
 
