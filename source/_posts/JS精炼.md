@@ -5,7 +5,6 @@ tags:
   - JS
 ---
 
-<br />
 ## is not defined 和 undefined区别
 之前没注意`is not defined`和`undefined`两者之间有什么区别，都简单地理解为未定义，但代码写多了，还是发现他们两者之间有明显的区别的
 

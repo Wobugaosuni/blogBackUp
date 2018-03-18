@@ -5,7 +5,6 @@ tags:
   - JS
 ---
 
-<br />
 # about this
 
 前端开发避免不了this
@@ -21,7 +20,6 @@ tags:
 
 <!--more-->
 
-<br />
 ## 一、全局的this（浏览器）
 
 - 当没有明确的执行时的当前对象时，指向全局对象Window
@@ -63,7 +61,6 @@ tags:
   这个很容易和对象的方法相混淆
   可以理解为test是Window对象下的方法，所以执行时当前的对象是Window
 
-<br />
 ## 二、一般函数的this（浏览器）
 
 非严格模式下，指向全局对象 <span style="display: inline-block; color: #6BD9EE; margin: 0 0 0 10px">▼</span>
@@ -80,7 +77,6 @@ tags:
   f2();   // undefined
 ```
 
-<br />
 ## 三、作为对象方法的函数this
 
 指向上级的对象 <span style="display: inline-block; color: #6BD9EE; margin: 0 0 0 10px">▼</span>
@@ -108,7 +104,6 @@ tags:
   console.log(obj2.func());  //37
 ```
 
-<br />
 ## 四、对象原型链上的this
 
 ```js
@@ -126,7 +121,6 @@ tags:
   console.log(p.f());  // 5 调用了原型的方法
 ```
 
-<br />
 ## 五、构造器中的this
 
 所谓构造函数，就是通过这个函数生成一个新的对象(object)
@@ -213,7 +207,6 @@ tags:
       }
       ```
 
-<br />
 ## 六、注意点
 
 - this的指向是**执行时的指向**，而不是定义时的指向
@@ -235,7 +228,6 @@ tags:
   ```
   虽然this是在obj1声明的，但运行的时候是在obj2，所以this指向obj2
 
-<br />
 # 修改this指向的域
 
 ## 一、call/apply
@@ -282,7 +274,6 @@ call和apply的区别：
   console.log(test3);  // 7
 ```
 
-<br />
 ## 二、bind
 
 - 改变函数的调用对象
@@ -308,7 +299,6 @@ call和apply的区别：
   console.log(obj.g());  // "test"
 ```
 
-<br />
 ## 三、使用箭头函数(arrow function)
 
 箭头函数是 ES6 新增的一种函数
@@ -335,7 +325,6 @@ call和apply的区别：
   - 从此不用bind、bind、bind了
   - `var that = this`这种hack写法也不需要了
 
-<br />
 # 应用
 
 ## 定时器、匿名函数、箭头函数、异步
@@ -415,7 +404,6 @@ call和apply的区别：
   - 当obj.showSay执行时，触发了匿名函数的执行，匿名函数把obj.say作为参数传递给回调函数，然后回调函数执行
   - 由于匿名函数的当前对象是Window，所以当回调函数执行时，this指向全局对象。打印出来的是'a'
 
-<br />
 # 参考文档
 - [Javascript的this用法](http://www.ruanyifeng.com/blog/2010/04/using_this_keyword_in_javascript.html)，阮一峰，2010年4月30日
 - [Javascript中this关键字详解](http://www.cnblogs.com/justany/archive/2012/11/01/the_keyword_this_in_javascript.html)，杨文坚，2012年11月1日

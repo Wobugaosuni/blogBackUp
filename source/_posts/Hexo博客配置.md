@@ -4,7 +4,6 @@ date: 2017-09-20 20:23:43
 tags:
 ---
 
-<br />
 ## 关于图片引用
 参考文档：https://hexo.io/zh-cn/docs/asset-folders.html
 - 方式一
@@ -13,7 +12,6 @@ tags:
 3. 通过类似于`![](/images/image.jpg)`访问图片
 
 <!-- more -->
-<br />
 - 方式二
 1. 在_config.yml中，把`post_asset_folder: false`设为true，打开资源文件管理功能
 2. 每次通过`hexo new [layout] <title>`命令创建新文章时，自动创建一个文件夹。将所有与你的文章有关的资源放在这个关联文件夹中之后，你可以通过相对路径来引用它们
@@ -23,14 +21,12 @@ tags:
 {% asset_img example.jpg This is an example image %}
 ```
 
-<br />
 - 方式三
 可以考虑放到cdn上，直接引用图片的线上地址，不过比较麻烦
 ```
 ![test](https://res.cloudinary.com/dhoua2kgz/image/upload/v1505728541/weilaishipAvator_cffdvb.jpg)
 ```
 
-<br />
 ## 关于图片大小
 控制图片大小的话，可以使用img标签
 方式二：
@@ -46,7 +42,6 @@ hexo没有提供修改宽高的接口，可以在模板外套一层div
 <img src="https://xxx.jpg" width = "150" align=center />
 ```
 
-<br />
 ## 关于主页文章截断
 本博客使用的是[yilia主题](https://github.com/litten/hexo-theme-yilia)
 在主页，默认是不截断文章的（文章多长就显示多长）

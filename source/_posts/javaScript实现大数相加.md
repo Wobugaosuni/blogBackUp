@@ -5,7 +5,6 @@ tags:
   - js
 ---
 
-<br />
 
 ## 超大的数
 
@@ -21,7 +20,6 @@ tags:
 
 <!-- more -->
 
-<br />
 ## 为何不能直接相加呢
 
 - 如下图所示，js采用IEEE754标准中的浮点数算法来表述数字Number.
@@ -32,14 +30,12 @@ tags:
   {% asset_img big-number.png %}
 </div>
 
-<br />
 ## github的开源
 
 实现大数相加的功能，已经有一些开源的库了
 不过基于求知欲(面试可能出现)，还是自己实现下好
 - [bignumber.js](https://github.com/MikeMcl/bignumber.js)
 
-<br />
 ## 实现
 
 >  思路，如图所示，按小时候的计算方式，从右边往左边开始相加
@@ -98,7 +94,6 @@ tags:
 
 ```
 
-<br />
 ## 文档参考
 
 - [js实现大数相加](http://www.plqblog.com/views/article.php?id=29)

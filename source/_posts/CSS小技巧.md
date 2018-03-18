@@ -43,7 +43,6 @@ text-overflow: ellipsis; /* 用省略号代表被修剪得文本 */
 }
 ```
 
-<br />
 ## 鼠标悬浮提示文字
 
 需求：鼠标经过时有文字注释
@@ -62,7 +61,6 @@ text-overflow: ellipsis; /* 用省略号代表被修剪得文本 */
   <div title="hello world">hello world</div>
   ```
 
-<br />
 - 方法2，利用css的`content:attr()`属性抓取资料
 优点：可定制化hover时的样式
 例子：
