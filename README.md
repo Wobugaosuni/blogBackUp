@@ -6,4 +6,7 @@ hexo s
 
 ## 创建新文章
 hexo new ${文章名}
+
+## 打包部署
+hexo d -g
 ```
