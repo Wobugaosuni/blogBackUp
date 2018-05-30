@@ -124,12 +124,17 @@ output:
 
 ## 梳理5-js更改伪元素的样式
 
+在网页的 `document` 里有个属性叫做 `styleSheet`，这个属性会将网页中所有用到的样式列出
+
 js操作Dom元素并不包括伪元素。如果想通过js修改伪元素的样式。可以使用`addRule()`的方法
+
+
 
 ```js
   document.styleSheets[0].addRule('output:before','transform:' + 'translate(0,' + rangeValue / -100 * (trackWidth - thumbDiameter) + 'px)')
 ```
 
+两个参数都是字符串。
 第一个参数是伪元素，第二个参数是相应的样式
 
 
