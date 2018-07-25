@@ -240,39 +240,80 @@ call和apply的区别：
 - call: 直接传参数
 - apply: 把数组作为参数传进去
 
-```js
-  var obj = {
-    a: 1,
-    b: 2
-  };
-  var a = 3;
-  var b = 4;
+- 例子1（改变this的指向）
 
-  function add (c, d) {
-    if (!c) {
-      c = 0
+  ```js
+    var obj = {
+      a: 1,
+      b: 2
+    };
+    var a = 3;
+    var b = 4;
+
+    function add (c, d) {
+      if (!c) {
+        c = 0
+      }
+
+      if (!d) {
+        d = 0
+      }
+
+      return this.a + this.b + c + d
+    };
+
+    var test = add.call(obj, 5, 7);
+
+    var test1 = add.apply(obj, [10, 7]);
+
+    var test2 = add.call()
+
+    var test3 = add.apply()
+
+    console.log(test);  // 15
+    console.log(test1);  // 20
+    console.log(test2);  // 7
+    console.log(test3);  // 7
+  ```
+  `add.call(obj, 5, 7)` add方法执行时，通过call改变了this的指向，this指向了`obj`
+
+- 例子2（改变this的指向）
+
+  ```js
+    var pet = {
+      words: '...',
+      speak: function(say){
+        console.log(say + ' ' + this.words)
+      }
+    }
+    var dog = {
+      words: 'wang'
+    }
+    pet.speak.call(dog, 'hello')  // hello wang
+  ```
+  `pet.speak.call(dog, 'hello')`：`call`方法改变了`this`的指向，this指向了`dog`
+
+- 例子3（继承构造函数）
+
+  ```js
+    function Pet(words) {
+      this.words = words
+      this.speak = function(){
+        console.log(this.words)
+      }
+      console.log('Pet this:', this)  // Pet this: Dog {words: "wang", speak: ƒ}
     }
 
-    if (!d) {
-      d = 0
+    function Dog(words){
+      // 使用call方法继承构造函数Pet，此时执行环境是在 Dog 下，所以指针指向 Dog
+      Pet.call(this, words)
+      console.log('Dog this:', this)  // Dog this: Dog {words: "wang", speak: ƒ}
     }
 
-    return this.a + this.b + c + d
-  };
+    var dog = new Dog('wang')
 
-  var test = add.call(obj, 5, 7);
-
-  var test1 = add.apply(obj, [10, 7]);
-
-  var test2 = add.call()
-
-  var test3 = add.apply()
-
-  console.log(test);  // 15
-  console.log(test1);  // 20
-  console.log(test2);  // 7
-  console.log(test3);  // 7
-```
+    dog.speak()  // 'wang'
+  ```
 
 ## 二、bind
 
