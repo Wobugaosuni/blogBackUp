@@ -1,6 +1,9 @@
 ## 快捷键
 
 ```bash
+## 全局安装 hexo
+npm install hexo -g
+
 ## 启动本地4000端口的服务，在浏览器查看
 hexo s
 
