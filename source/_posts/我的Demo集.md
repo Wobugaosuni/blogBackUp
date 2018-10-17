@@ -4,7 +4,7 @@ date: 2018-10-17 15:01:14
 tags:
 ---
 
-平时工作中遇到的问题总结、学习笔记等，都会记录到博客里的，欢迎阅读和指教啦：annhuang.cn
+平时工作中遇到的问题总结、学习笔记等，都会记录到博客里的，欢迎阅读和指教啦：http://annhuang.cn/
 
 github地址：https://github.com/Wobugaosuni
 
@@ -19,6 +19,8 @@ github地址：https://github.com/Wobugaosuni
 - [node.js学习笔记和demo](https://github.com/Wobugaosuni/node-practice)
 
 - [d3.js制作图表](http://annhuang.cn/d3Chart/)
+
+<!--more-->
 
 - [使用圆锥渐变和css变量创建一个range input控制的环形图](http://annhuang.cn/rangeInput/)
 
