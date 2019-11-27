@@ -53,18 +53,15 @@ tags:
 
 ```js
   function add(string1, string2) {
-    function add(string1, string2) {
     // 实现该函数
     // 先判断，如果小于16位，直接相加
     if (string1.length < 16 && string2.length <16) {
       return ((+string1) + (+string2)).toString()
     }
 
-    /**
-    * 方法一，不能实现大数相加
-    */
+    // 大数相加方法1
     // return (Number(string1) + Number(string2)).toString()
-    // 大数相加
+    // 大数相加方法2
     let list1 = string1.split('').reverse()   // 将字符串拆分成单个元素的数组，把元素颠倒过来
     let list2 = string2.split('').reverse()
     let resultList = []  // 存放相加好的个位数的list
